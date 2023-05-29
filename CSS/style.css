@@ -1,0 +1,164 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+button,
+btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/* heder*/
+
+.header {
+  border-bottom: 1px solid;
+  border-bottom-color: #d9fff5;
+}
+
+/* Заголовок секции */
+.section-services__title {
+  background: linear-gradient(to right, #f8f8f8 0%, #ffffff 98.61%);
+  padding-left: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.section-services__h2 {
+  font-family: "TT Lakes";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #7e7e82;
+}
+
+/* секция брэнков и услуг */
+
+.section-services__menu {
+  display: flex;
+  background: #f2f2f2;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding-top: 24px;
+  padding-left: 32px;
+}
+
+.section-services__link {
+  display: flex;
+  width: 240px;
+  height: 72px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  align-items: center;
+}
+
+.section-services__link::after {
+  position: absolute;
+  content: " ";
+  width: 40px;
+  height: 40px;
+  transform: translateX(184px);
+  background-image: url("../images/btn-go.svg");
+  background-repeat: no-repeat;
+}
+
+.section-services__link:hover::after {
+  transform: translateX(180px) rotate(360deg);
+  transition: transform 0.25s ease-in-out;
+}
+
+.section-services__link:active:after {
+  transition-duration: 0.1s;
+  transform: translateX(182px);
+}
+
+.section-services__icon-svg {
+  margin-left: 16px;
+}
+.section-services__icon-svg--acer {
+  width: 94px;
+  height: 24px;
+}
+
+.section-services__icon-svg--apple {
+  width: 44px;
+  height: 44px;
+}
+
+.section-services__icon-svg--bosch {
+  width: 128px;
+  height: 28.6px;
+}
+
+.section-services__icon-svg--hp {
+  width: 52px;
+  height: 52px;
+}
+
+.section-services__icon-svg--lenovo {
+  width: 108px;
+  height: 32px;
+}
+
+.section-services__icon-svg--samsung {
+  width: 116px;
+  height: 38.52px;
+}
+
+.section-services__icon-svg--sony {
+  width: 128px;
+  height: 25.6px;
+}
+
+.section-services__icon-svg--view-sonic {
+  width: 128px;
+  height: 21px;
+}
+
+.btn__show-more {
+  font-family: "TT Lakes";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1b1c21;
+  padding-left: 63px;
+  padding-top: 24px;
+  padding-right: 100%;
+  padding-bottom: 34px;
+  background-color: #f2f2f2;
+  white-space: nowrap;
+}
+
+.btn__show-more::before {
+  position: absolute;
+  content: " ";
+  background-repeat: no-repeat;
+  background-image: url("../images/expand.svg");
+  transform: translateX(-32px);
+  width: 24px;
+  height: 24px;
+}
