@@ -39,7 +39,7 @@ showMore.addEventListener("click", function () {
     }
   }
 
-  /* алгоритv замены надписи и поворота стрелок */
+  /* алгоритм замены надписи и поворота стрелок */
   if (!showMoreBtn.classList.contains("open", "btn--rotate")) {
     showMoreBtn.classList.add("open", "btn--rotate");
     showMoreBtn.textContent = "Скрыть";
