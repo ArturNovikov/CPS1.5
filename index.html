@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="section-services__content">
-        <div class="container">
+        <div class="container container__menu">
           <ul class="section-services__menu">
             <li class="section-services__element">
               <a class="section-services__link" href="#">
@@ -79,7 +79,7 @@
               </a>
             </li>
 
-            <li class="section-services__element">
+            <li class="section-services__element section-services__element--hide768">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--sony"
@@ -89,7 +89,7 @@
               </a>
             </li>
 
-            <li class="section-services__element">
+            <li class="section-services__element section-services__element--hide768">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--view-sonic"
@@ -98,11 +98,51 @@
                 </svg>
               </a>
             </li>
+
+            <li class="section-services__element section-services__element--hide">
+              <a class="section-services__link" href="#">
+                <svg
+                  class="section-services__icon-svg section-services__icon-svg--acer"
+                >
+                  <use xlink:href="./images/sprite.svg#acer" />
+                </svg>
+              </a>
+            </li>
+
+            <li class="section-services__element section-services__element--hide">
+              <a class="section-services__link" href="#">
+                <svg
+                  class="section-services__icon-svg section-services__icon-svg--apple"
+                >
+                  <use xlink:href="./images/sprite.svg#apple" />
+                </svg>
+              </a>
+            </li>
+
+            <li class="section-services__element section-services__element--hide">
+              <a class="section-services__link" href="#">
+                <svg
+                  class="section-services__icon-svg section-services__icon-svg--bosch"
+                >
+                  <use xlink:href="./images/sprite.svg#bosch" />
+                </svg>
+              </a>
+            </li>
+
           </ul>
-          <button class="btn btn__show-more">Показать все</button>
+          <button class="btn btn__show-more" type="button">Показать все</button>
         </div>
       </div>
     </section>
+    <template id="section-template">
+      <li class="section-template__element">
+        <a>
+          <svg>
+            <use>
+          </svg>
+        </a>
+      </li>
+    </template>
     <script src="./JS/script.js"></script>
   </body>
 </html>
