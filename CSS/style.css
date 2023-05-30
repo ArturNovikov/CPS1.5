@@ -54,6 +54,9 @@ btn {
 }
 
 /* секция брэнков и услуг */
+.section-services {
+  background: #f2f2f2;
+}
 
 .section-services__menu {
   display: flex;
@@ -66,12 +69,12 @@ btn {
 
 .section-services__link {
   display: flex;
-  width: 240px;
+  align-items: center;
+  min-width: 240px;
   height: 72px;
   background: #ffffff;
   border: 1px solid #eaeaea;
   border-radius: 6px;
-  align-items: center;
 }
 
 .section-services__link::after {
@@ -89,7 +92,7 @@ btn {
   transition: transform 0.25s ease-in-out;
 }
 
-.section-services__link:active:after {
+.section-services__link:active::after {
   transition-duration: 0.1s;
   transform: translateX(182px);
 }
@@ -147,7 +150,6 @@ btn {
   color: #1b1c21;
   padding-left: 63px;
   padding-top: 24px;
-  padding-right: 100%;
   padding-bottom: 34px;
   background-color: #f2f2f2;
   white-space: nowrap;
@@ -161,4 +163,63 @@ btn {
   transform: translateX(-32px);
   width: 24px;
   height: 24px;
+}
+
+.btn--rotate::before {
+  position: absolute;
+  content: " ";
+  background-repeat: no-repeat;
+  background-image: url("../images/expand.svg");
+  transform: translateX(-32px) rotate(180deg);
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 768px) and (max-width: 1119px) {
+  .section-services__element--hide,
+  .section-services__element--hide768 {
+    display: none;
+  }
+
+  .section-services__link {
+    min-width: 224px;
+  }
+
+  .section-services__link::after {
+    transform: translateX(168px);
+  }
+
+  .section-services__link:hover::after {
+    transform: translateX(166px) rotate(360deg);
+  }
+
+  .section-services__link:active::after {
+    transform: translateX(168px);
+  }
+  .section-services__menu {
+    padding-left: 24px;
+  }
+  .container {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn__show-more {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .section-services__element--hide {
+    display: none;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn__show-more {
+    max-width: 1120px;
+  }
 }
