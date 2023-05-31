@@ -21,7 +21,8 @@ a {
 }
 
 button,
-btn {
+btn,
+.section-services__element {
   cursor: pointer;
   border: none;
   outline: none;
