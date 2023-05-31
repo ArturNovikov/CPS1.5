@@ -38,7 +38,6 @@ btn {
 /* Заголовок секции */
 .section-services__title {
   background: linear-gradient(to right, #f8f8f8 0%, #ffffff 98.61%);
-  padding-left: 32px;
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -53,7 +52,7 @@ btn {
   color: #7e7e82;
 }
 
-/* секция брэнков и услуг */
+/* секция брэндов и услуг */
 .section-services {
   background: #f2f2f2;
 }
@@ -62,39 +61,39 @@ btn {
   display: flex;
   background: #f2f2f2;
   flex-wrap: wrap;
-  gap: 16px 32px;
+  gap: 16px 2.9415%;
   padding-top: 24px;
-  padding-left: 32px;
 }
 
-.section-services__link {
+.section-services__element {
+  position: relative;
   display: flex;
   align-items: center;
-  min-width: 240px;
+  min-width: 22.0595%;
   height: 72px;
   background: #ffffff;
   border: 1px solid #eaeaea;
   border-radius: 6px;
 }
 
-.section-services__link::after {
-  position: absolute;
+.section-services__element::before {
   content: " ";
+  position: absolute;
+  right: 16px;
   width: 40px;
   height: 40px;
-  transform: translateX(184px);
   background-image: url("../images/btn-go.svg");
   background-repeat: no-repeat;
 }
 
-.section-services__link:hover::after {
-  transform: translateX(180px) rotate(360deg);
+.section-services__element:hover::before {
+  transform: translateX(5px) rotate(360deg);
   transition: transform 0.25s ease-in-out;
 }
 
-.section-services__link:active::after {
-  transition-duration: 0.1s;
-  transform: translateX(182px);
+.section-services__element:active::before {
+  transform: scale(0.9);
+  transition: transform 0.15s ease-in-out;
 }
 
 .section-services__icon-svg {
@@ -148,7 +147,7 @@ btn {
   line-height: 24px;
   letter-spacing: -0.2px;
   color: #1b1c21;
-  padding-left: 63px;
+  padding-left: 32px;
   padding-top: 24px;
   padding-bottom: 34px;
   background-color: #f2f2f2;
@@ -175,37 +174,42 @@ btn {
   height: 24px;
 }
 
+/* Адаптив */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .section-services__content {
+    overflow: hidden;
+    padding-left: 5%;
+  }
+  .section-services__h2 {
+    padding-left: 5%;
+  }
+  .section-services__menu {
+    flex-wrap: nowrap;
+  }
+  .section-services__element {
+    min-width: 75%;
+  }
+  .btn__show-more {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1119px) {
   .section-services__element--hide,
   .section-services__element--hide768 {
     display: none;
   }
-
-  .section-services__link {
-    min-width: 224px;
+  .section-services__h2 {
+    padding-left: 2.125%;
   }
-
-  .section-services__link::after {
-    transform: translateX(168px);
-  }
-
-  .section-services__link:hover::after {
-    transform: translateX(166px) rotate(360deg);
-  }
-
-  .section-services__link:active::after {
-    transform: translateX(168px);
-  }
-  .section-services__menu {
-    padding-left: 24px;
-  }
-  .container {
-    max-width: 768px;
+  .section-services__content {
     margin-left: auto;
     margin-right: auto;
+    padding-left: 2.125%;
   }
-  .btn__show-more {
-    max-width: 768px;
+  .section-services__element {
+    min-width: 29.8%;
   }
 }
 
@@ -213,13 +217,12 @@ btn {
   .section-services__element--hide {
     display: none;
   }
-
-  .container {
-    max-width: 1120px;
+  .section-services__h2 {
+    padding-left: 2.8575%;
+  }
+  .section-services__content {
     margin-left: auto;
     margin-right: auto;
-  }
-  .btn__show-more {
-    max-width: 1120px;
+    padding-left: 2.8575%;
   }
 }
