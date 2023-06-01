@@ -1,3 +1,31 @@
+let init = false;
+let swiper = null;
+
+const swiperCard = () => {
+  if (window.innerWidth < 767) {
+    if (!init) {
+      init = true;
+      swiper = new Swiper(".swiper", {
+        spaceBetween: 16,
+        slidesPerView: 1.18,
+        allowTouchMove: true,
+        speed: 400,
+        height: 72,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  } else {
+    swiper && swiper.destroy();
+    init = false;
+  }
+};
+
+swiperCard();
+window.addEventListener("resize", swiperCard);
+
 let showMore = document.querySelector(".btn__show-more");
 let sectionElementHide = document.querySelectorAll(
   ".section-services__element--hide"
@@ -10,7 +38,6 @@ let sectionElementHide768 = document.querySelectorAll(
 /*показать скрыть выпадающие элементы*/
 showMore.addEventListener("click", function () {
   let showMoreBtn = document.querySelector(".btn");
-
   for (let i = 0; i < sectionElementHide768.length; i++) {
     if (
       sectionElementHide768[i].classList.contains(
@@ -49,11 +76,31 @@ showMore.addEventListener("click", function () {
   }
 });
 
-/* let createServicesElement = newItemTemplate.cloneNode(true); */
+// Добавление и удаление класса сладера к элементу в зависимости от размера дисплея
+// поиск всех элементов с классом swiper-slide
+let swiperSlideAll = document.querySelectorAll(".swiper-slide");
+let swiperWrapper = document.querySelector(".swiper-wrapper");
+/* медиазапрос */
+if (matchMedia) {
+  var screen = window.matchMedia("(max-width:767px)");
+  screen.addListener(changes);
+  changes(screen);
+}
+function changes(screen) {
+  if (screen.matches) {
+    /* появляется свайпер: добавляются классы */
+    for (let i = 0; i < swiperSlideAll.length; i++) {
+      if (!swiperSlideAll[i].classList.contains("swiper-slide")) {
+        swiperSlideAll[i].classList.add("swiper-slide");
+      }
+    }
+  } else {
+    /* удаляется свайпер: удаляются классы */
 
-/* поиск шаблона и создание клона */
-/* let sectionTemplate = document.querySelector("#section-template").content;
-let clonedTemplate = sectionTemplate.cloneNode(true);
-let sectionMenu = document.querySelector(".section-services__menu");
-sectionMenu.appendChild(clonedTemplate);
- */
+    for (let i = 0; i < swiperSlideAll.length; i++) {
+      if (swiperSlideAll[i].classList.contains("swiper-slide")) {
+        swiperSlideAll[i].classList.remove("swiper-slide");
+      }
+    }
+  }
+}
