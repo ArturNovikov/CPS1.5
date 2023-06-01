@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/fonts.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
     <title>CPS1.5</title>
   </head>
   <body>
@@ -17,9 +21,9 @@
         </div>
       </div>
       <div class="section-services__content">
-        <div class="container container__menu">
-          <ul class="section-services__menu">
-            <li class="section-services__element">
+        <div class="container container__menu swiper">
+          <ul class="section-services__menu swiper-wrapper">
+            <li class="section-services__element swiper-slide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--acer"
@@ -29,7 +33,7 @@
               </a>
             </li>
 
-            <li class="section-services__element">
+            <li class="section-services__element swiper-slide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--apple"
@@ -39,8 +43,8 @@
               </a>
             </li>
 
-            <li class="section-services__element">
-              <a class="section-services__link" href="#">
+            <li class="section-services__element swiper-slide">
+              <a class="section-services__link " href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--bosch"
                 >
@@ -49,7 +53,7 @@
               </a>
             </li>
 
-            <li class="section-services__element">
+            <li class="section-services__element swiper-slide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--hp"
@@ -59,7 +63,7 @@
               </a>
             </li>
 
-            <li class="section-services__element">
+            <li class="section-services__element swiper-slide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--lenovo"
@@ -69,7 +73,7 @@
               </a>
             </li>
 
-            <li class="section-services__element">
+            <li class="section-services__element swiper-slide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--samsung"
@@ -79,7 +83,7 @@
               </a>
             </li>
 
-            <li class="section-services__element section-services__element--hide768">
+            <li class="section-services__element swiper-slide section-services__element--hide768">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--sony"
@@ -89,7 +93,7 @@
               </a>
             </li>
 
-            <li class="section-services__element section-services__element--hide768">
+            <li class="section-services__element swiper-slide section-services__element--hide768">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--view-sonic"
@@ -99,7 +103,7 @@
               </a>
             </li>
 
-            <li class="section-services__element section-services__element--hide">
+            <li class="section-services__element swiper-slide section-services__element--hide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--acer"
@@ -109,7 +113,7 @@
               </a>
             </li>
 
-            <li class="section-services__element section-services__element--hide">
+            <li class="section-services__element swiper-slide section-services__element--hide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--apple"
@@ -119,7 +123,7 @@
               </a>
             </li>
 
-            <li class="section-services__element section-services__element--hide">
+            <li class="section-services__element swiper-slide section-services__element--hide">
               <a class="section-services__link" href="#">
                 <svg
                   class="section-services__icon-svg section-services__icon-svg--bosch"
@@ -131,6 +135,7 @@
 
           </ul>
           <button class="btn btn__show-more" type="button">Показать все</button>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -143,6 +148,7 @@
         </a>
       </li>
     </template>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./JS/script.js"></script>
   </body>
 </html>
