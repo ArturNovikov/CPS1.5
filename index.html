@@ -7,147 +7,191 @@
     <link rel="stylesheet" href="./CSS/fonts.css" />
     <link rel="stylesheet" href="./CSS/style.css" />
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <title>CPS1.5</title>
   </head>
   <body>
     <header class="header"></header>
-    <section class="section-services">
-      <div class="section-services__title">
-        <div class="container">
-          <h2 class="section-services__h2">Ремонт техники различных брендов</h2>
-        </div>
-      </div>
-      <div class="section-services__content">
+    <section class="services">
+      <h2 class="services__title">Ремонт техники различных брендов</h2>
+
+      <div class="services__brands brands">
         <div class="container container__menu swiper">
-          <ul class="section-services__menu swiper-wrapper">
-            <li class="section-services__element swiper-slide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--acer"
-                >
-                  <use xlink:href="./images/sprite.svg#acer" />
-                </svg>
-              </a>
+          <ul class="services__menu swiper-wrapper">
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/acer.svg"
+                  alt="acer logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--apple"
-                >
-                  <use xlink:href="./images/sprite.svg#apple" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/apple.svg"
+                  alt="apple logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide">
-              <a class="section-services__link " href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--bosch"
-                >
-                  <use xlink:href="./images/sprite.svg#bosch" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/bosch.svg"
+                  alt="bosch logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--hp"
-                >
-                  <use xlink:href="./images/sprite.svg#hp" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/hp.svg"
+                  alt="hp logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--lenovo"
-                >
-                  <use xlink:href="./images/sprite.svg#lenovo" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/lenovo.svg"
+                  alt="lenovo logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--samsung"
-                >
-                  <use xlink:href="./images/sprite.svg#samsung" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/samsung.svg"
+                  alt="samsung logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide section-services__element--hide768">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--sony"
-                >
-                  <use xlink:href="./images/sprite.svg#sony" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/sony.svg"
+                  alt="sony logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide section-services__element--hide768">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--view-sonic"
-                >
-                  <use xlink:href="./images/sprite.svg#view-sonic" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/view-sonic.svg"
+                  alt="view-sonic logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide section-services__element--hide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--acer"
-                >
-                  <use xlink:href="./images/sprite.svg#acer" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/acer.svg"
+                  alt="acer logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide section-services__element--hide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--apple"
-                >
-                  <use xlink:href="./images/sprite.svg#apple" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/apple.svg"
+                  alt="apple logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
 
-            <li class="section-services__element swiper-slide section-services__element--hide">
-              <a class="section-services__link" href="#">
-                <svg
-                  class="section-services__icon-svg section-services__icon-svg--bosch"
-                >
-                  <use xlink:href="./images/sprite.svg#bosch" />
-                </svg>
-              </a>
+            <li class="services__element swiper-slide">
+              <button class="btn services__button" type="button">
+                <img
+                  class="services__svg"
+                  src="./images/bosch.svg"
+                  alt="bosch logo"
+                />
+                <img
+                  class="services__svg"
+                  src="./images/btn-go.svg"
+                  alt="button go-next"
+                />
+              </button>
             </li>
-
           </ul>
-          <button class="btn btn__show-more" type="button">Показать все</button>
+          <button class="services__show-more-btn btn" type="button">
+            Показать все
+          </button>
           <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
-    <template id="section-template">
-      <li class="section-template__element">
-        <a>
-          <svg>
-            <use>
-          </svg>
-        </a>
-      </li>
-    </template>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./JS/script.js"></script>
   </body>
