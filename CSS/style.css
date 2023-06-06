@@ -1,4 +1,5 @@
-html {
+html,
+.btn {
   box-sizing: border-box;
 }
 
@@ -22,32 +23,18 @@ a {
 
 button,
 btn,
-.section-services__element {
+.services__element {
   cursor: pointer;
   border: none;
-  outline: none;
   background-color: transparent;
 }
-
-use {
-background: rgb(255 192 203 / 0%);
-}
-
-/* heder*/
 
 .header {
   border-bottom: 1px solid;
   border-bottom-color: #d9fff5;
 }
 
-/* Заголовок секции */
-.section-services__title {
-  background: linear-gradient(to right, #f8f8f8 0%, #ffffff 98.61%);
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
-.section-services__h2 {
+.services__title {
   font-family: "TT Lakes";
   font-size: 16px;
   line-height: 24px;
@@ -55,14 +42,17 @@ background: rgb(255 192 203 / 0%);
   text-transform: uppercase;
   font-weight: normal;
   color: #7e7e82;
+  background: linear-gradient(to right, #f8f8f8 0%, #ffffff 98.61%);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 2.858%;
 }
 
-/* секция брэндов и услуг */
-.section-services {
+.services {
   background: #f2f2f2;
 }
 
-.section-services__menu {
+.services__menu {
   display: flex;
   background: #f2f2f2;
   flex-wrap: wrap;
@@ -70,7 +60,7 @@ background: rgb(255 192 203 / 0%);
   padding-top: 24px;
 }
 
-.section-services__element {
+.services__element {
   position: relative;
   display: flex;
   align-items: center;
@@ -81,70 +71,30 @@ background: rgb(255 192 203 / 0%);
   border-radius: 6px;
 }
 
-.section-services__element::before {
-  content: " ";
-  position: absolute;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  background-image: url("../images/btn-go.svg");
-  background-repeat: no-repeat;
+.services__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100%;
+  height: 72px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-.section-services__element:hover::before {
-  transform: translateX(5px) rotate(360deg);
-  transition: transform 0.25s ease-in-out;
+.services__show-more-btn:focus,
+.services__button:focus {
+  outline: none;
+  box-shadow: inset 0px 0px 6px 6px #d9fff5;
 }
 
-.section-services__element:active::before {
-  transform: scale(0.9);
-  transition: transform 0.15s ease-in-out;
+.services__show-more-btn:focus {
+  box-shadow: inset 0px -6px 0px 0px #d9fff5;
 }
 
-.section-services__icon-svg {
-  margin-left: 16px;
-}
-.section-services__icon-svg--acer {
-  width: 94px;
-  height: 24px;
-}
-
-.section-services__icon-svg--apple {
-  width: 44px;
-  height: 44px;
-}
-
-.section-services__icon-svg--bosch {
-  width: 128px;
-  height: 28.6px;
-}
-
-.section-services__icon-svg--hp {
-  width: 52px;
-  height: 52px;
-}
-
-.section-services__icon-svg--lenovo {
-  width: 108px;
-  height: 32px;
-}
-
-.section-services__icon-svg--samsung {
-  width: 116px;
-  height: 38.52px;
-}
-
-.section-services__icon-svg--sony {
-  width: 128px;
-  height: 25.6px;
-}
-
-.section-services__icon-svg--view-sonic {
-  width: 128px;
-  height: 21px;
-}
-
-.btn__show-more {
+.services__show-more-btn {
   font-family: "TT Lakes";
   font-style: normal;
   font-weight: 500;
@@ -159,7 +109,7 @@ background: rgb(255 192 203 / 0%);
   white-space: nowrap;
 }
 
-.btn__show-more::before {
+.services__show-more-btn::before {
   position: absolute;
   content: " ";
   background-repeat: no-repeat;
@@ -179,10 +129,8 @@ background: rgb(255 192 203 / 0%);
   height: 24px;
 }
 
-/* Адаптив */
-
 @media (min-width: 320px) and (max-width: 354px) {
-  .section-services::after {
+  .services::after {
     content: " ";
     position: absolute;
     width: 24px;
@@ -199,7 +147,7 @@ background: rgb(255 192 203 / 0%);
 }
 
 @media (min-width: 355px) and (max-width: 767px) {
-  .section-services::after {
+  .services::after {
     content: " ";
     position: absolute;
     width: 24px;
@@ -216,24 +164,29 @@ background: rgb(255 192 203 / 0%);
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .section-services__content {
+  .services__brands {
     overflow: hidden;
     padding-left: 5%;
   }
-  .section-services__h2 {
+
+  .services__title {
     padding-left: 5%;
   }
-  .section-services__menu {
+
+  .services__menu {
     flex-wrap: nowrap;
     padding-top: 16px;
   }
-  .section-services__element {
+
+  .services__element {
     min-width: 75%;
   }
-  .btn__show-more {
+
+  .services__show-more-btn {
     display: none;
   }
-  li.swiper-slide {
+
+  div.swiper-slide {
     display: flex;
     align-items: center;
     height: 72px;
@@ -247,6 +200,7 @@ background: rgb(255 192 203 / 0%);
     justify-content: center;
     column-gap: 4px;
   }
+
   span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #b5b6bc;
     width: 12px;
@@ -263,33 +217,61 @@ background: rgb(255 192 203 / 0%);
 }
 
 @media (min-width: 768px) and (max-width: 1119px) {
-  .section-services__element--hide,
-  .section-services__element--hide768 {
-    display: none;
-  }
-  .section-services__h2 {
+  .services__title {
     padding-left: 2.125%;
   }
-  .section-services__content {
+
+  .services__brands {
     margin-left: auto;
     margin-right: auto;
     padding-left: 2.125%;
   }
-  .section-services__element {
+
+  .services__menu {
+    height: 190px;
+    overflow-y: hidden;
+  }
+
+  .services__element {
     min-width: 29.8%;
+  }
+
+  .services__menu--open {
+    height: auto;
+  }
+
+  .services__menu--close {
+    height: 190px;
+    overflow-y: hidden;
   }
 }
 
 @media (min-width: 1120px) {
-  .section-services__element--hide {
+  .services__element--hide {
     display: none;
   }
-  .section-services__h2 {
+
+  .services__itile {
     padding-left: 2.8575%;
   }
-  .section-services__content {
+
+  .services__brands {
     margin-left: auto;
     margin-right: auto;
     padding-left: 2.8575%;
+  }
+
+  .services__menu {
+    height: 190px;
+    overflow-y: hidden;
+  }
+
+  .services__menu--open {
+    height: auto;
+  }
+
+  .services__menu--close {
+    height: 190px;
+    overflow-y: hidden;
   }
 }
