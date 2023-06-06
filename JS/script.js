@@ -50,7 +50,6 @@ function myFunction(x) {
       },
     });
   } else {
-    console.log("max");
     let swiper = new Swiper(".swiper", {});
     swiper.destroy();
     for (let i = 0; i < swiperSlideAll.length; i++) {
