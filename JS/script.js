@@ -45,8 +45,6 @@ function myFunction(x) {
     }
     swiperWrapper.classList.add("swiper-wrapper");
     containerMenu.classList.add("swiper");
-    servicesMenu.classList.remove("services__menu--close");
-    servicesMenu.classList.remove("services__menu--open");
   } else {
     let swiper = new Swiper(".swiper", {
       cssMode: false,
