@@ -20,13 +20,24 @@ const showMoreBtnFunc = function () {
 };
 showMoreBtnFunc();
 
-let swiperSlideAll = document.querySelectorAll(".swiper-slide");
-let swiperWrapper = document.querySelector(".swiper-wrapper");
+let swiperSlideAll = document.querySelectorAll(".services__element");
 let containerMenu = document.querySelector(".container__menu");
 let servicesMenu = document.querySelector(".services__menu");
-
+let x = window.matchMedia("(max-width: 768px)");
 function myFunction(x) {
   if (x.matches) {
+    for (let i = 0; i < swiperSlideAll.length; i++) {
+      if (!swiperSlideAll[i].classList.contains("swiper-slide")) {
+        swiperSlideAll[i].classList.add("swiper-slide");
+      }
+    }
+    if (!servicesMenu.classList.contains("swiper-wrapper")) {
+      servicesMenu.classList.add("swiper-wrapper");
+    }
+    if (!containerMenu.classList.contains("swiper")) {
+      containerMenu.classList.add("swiper");
+    }
+
     let swiper = new Swiper(".swiper", {
       spaceBetween: 16,
       slidesPerView: 1.18,
@@ -38,29 +49,19 @@ function myFunction(x) {
         clickable: true,
       },
     });
-    for (let i = 0; i < swiperSlideAll.length; i++) {
-      if (!swiperSlideAll[i].classList.contains("swiper-slide")) {
-        swiperSlideAll[i].classList.add("swiper-slide");
-      }
-    }
-    swiperWrapper.classList.add("swiper-wrapper");
-    containerMenu.classList.add("swiper");
   } else {
-    let swiper = new Swiper(".swiper", {
-      cssMode: false,
-    });
+    console.log("max");
+    let swiper = new Swiper(".swiper", {});
     swiper.destroy();
-
     for (let i = 0; i < swiperSlideAll.length; i++) {
       if (swiperSlideAll[i].classList.contains("swiper-slide")) {
         swiperSlideAll[i].classList.remove("swiper-slide");
       }
     }
-    swiperWrapper.classList.remove("swiper-wrapper");
+    servicesMenu.classList.remove("swiper-wrapper");
     containerMenu.classList.remove("swiper");
   }
 }
-
-var x = window.matchMedia("(max-width: 768px)");
 myFunction(x);
 x.addEventListener("change", myFunction);
+
