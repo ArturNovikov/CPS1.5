@@ -23,7 +23,7 @@ showMoreBtnFunc();
 let swiperSlideAll = document.querySelectorAll(".services__element");
 let containerMenu = document.querySelector(".container__menu");
 let servicesMenu = document.querySelector(".services__menu");
-let x = window.matchMedia("(max-width: 768px)");
+let x = window.matchMedia("(max-width: 767px)");
 function myFunction(x) {
   if (x.matches) {
     for (let i = 0; i < swiperSlideAll.length; i++) {
