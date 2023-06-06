@@ -1,106 +1,68 @@
-let init = false;
-let swiper = null;
+const showMoreBtnFunc = function () {
+  let showMore = document.querySelector(".services__show-more-btn");
 
-const swiperCard = () => {
-  if (window.innerWidth < 767) {
-    if (!init) {
-      init = true;
-      swiper = new Swiper(".swiper", {
-        spaceBetween: 16,
-        slidesPerView: 1.18,
-        allowTouchMove: true,
-        speed: 400,
-        height: 72,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
+  showMore.addEventListener("click", function () {
+    let showMoreBtn = document.querySelector(".services__show-more-btn");
+    let servicesMenu = document.querySelector(".services__menu");
+
+    if (!showMoreBtn.classList.contains("open", "btn--rotate")) {
+      showMoreBtn.classList.add("open", "btn--rotate");
+      showMoreBtn.textContent = "Скрыть";
+      servicesMenu.classList.add("services__menu--open");
+      servicesMenu.classList.remove("services__menu--close");
+    } else {
+      showMoreBtn.classList.remove("open", "btn--rotate");
+      showMoreBtn.textContent = "Показать все";
+      servicesMenu.classList.add("services__menu--close");
+      servicesMenu.classList.remove("services__menu--open");
     }
-  } else {
-    swiper && swiper.destroy();
-    init = false;
-  }
+  });
 };
+showMoreBtnFunc();
 
-swiperCard();
-window.addEventListener("resize", swiperCard);
-
-let showMore = document.querySelector(".btn__show-more");
-let sectionElementHide = document.querySelectorAll(
-  ".section-services__element--hide"
-);
-
-let sectionElementHide768 = document.querySelectorAll(
-  ".section-services__element--hide768"
-);
-
-/*показать скрыть выпадающие элементы*/
-showMore.addEventListener("click", function () {
-  let showMoreBtn = document.querySelector(".btn");
-  for (let i = 0; i < sectionElementHide768.length; i++) {
-    if (
-      sectionElementHide768[i].classList.contains(
-        "section-services__element--hide768"
-      )
-    ) {
-      sectionElementHide768[i].classList.remove(
-        "section-services__element--hide768"
-      );
-    } else {
-      sectionElementHide768[i].classList.add(
-        "section-services__element--hide768"
-      );
-    }
-  }
-
-  for (let i = 0; i < sectionElementHide.length; i++) {
-    if (
-      sectionElementHide[i].classList.contains(
-        "section-services__element--hide"
-      )
-    ) {
-      sectionElementHide[i].classList.remove("section-services__element--hide");
-    } else {
-      sectionElementHide[i].classList.add("section-services__element--hide");
-    }
-  }
-
-  /* алгоритм замены надписи и поворота стрелок */
-  if (!showMoreBtn.classList.contains("open", "btn--rotate")) {
-    showMoreBtn.classList.add("open", "btn--rotate");
-    showMoreBtn.textContent = "Скрыть";
-  } else {
-    showMoreBtn.classList.remove("open", "btn--rotate");
-    showMoreBtn.textContent = "Показать все";
-  }
-});
-
-// Добавление и удаление класса сладера к элементу в зависимости от размера дисплея
-// поиск всех элементов с классом swiper-slide
 let swiperSlideAll = document.querySelectorAll(".swiper-slide");
 let swiperWrapper = document.querySelector(".swiper-wrapper");
-/* медиазапрос */
-if (matchMedia) {
-  var screen = window.matchMedia("(max-width:767px)");
-  screen.addListener(changes);
-  changes(screen);
-}
-function changes(screen) {
-  if (screen.matches) {
-    /* появляется свайпер: добавляются классы */
+let containerMenu = document.querySelector(".container__menu");
+let servicesMenu = document.querySelector(".services__menu");
+
+function myFunction(x) {
+  if (x.matches) {
+    let swiper = new Swiper(".swiper", {
+      spaceBetween: 16,
+      slidesPerView: 1.18,
+      allowTouchMove: true,
+      speed: 400,
+      height: 72,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
     for (let i = 0; i < swiperSlideAll.length; i++) {
       if (!swiperSlideAll[i].classList.contains("swiper-slide")) {
         swiperSlideAll[i].classList.add("swiper-slide");
       }
     }
+    swiperWrapper.classList.add("swiper-wrapper");
+    containerMenu.classList.add("swiper");
+    servicesMenu.classList.remove("services__menu--close");
+    servicesMenu.classList.remove("services__menu--open");
   } else {
-    /* удаляется свайпер: удаляются классы */
+    let swiper = new Swiper(".swiper", {
+      cssMode: false,
+    });
+    swiper.destroy();
 
     for (let i = 0; i < swiperSlideAll.length; i++) {
       if (swiperSlideAll[i].classList.contains("swiper-slide")) {
         swiperSlideAll[i].classList.remove("swiper-slide");
       }
     }
+    swiperWrapper.classList.remove("swiper-wrapper");
+    containerMenu.classList.remove("swiper");
   }
 }
+
+var x = window.matchMedia("(max-width: 768px)");
+myFunction(x);
+x.addEventListener("change", myFunction);
